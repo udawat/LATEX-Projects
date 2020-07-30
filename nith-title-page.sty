@@ -5,8 +5,12 @@
 \def\@institute{\@latex@warning@no@line{No \noexpand\institute given}}
 \def\topic#1{\gdef\@topic{#1}}
 \def\@topic{\@latex@warning@no@line{No \noexpand\topic given}}
-\def\code#1{\gdef\@code{#1}}
-\def\@code{\@latex@warning@no@line{No \noexpand\code given}}
+\def\subject-code#1{\gdef\@subject-code{#1}}
+\def\@subject-code{\@latex@warning@no@line{No \noexpand\subject-code given}}
+\def\specialization#1{\gdef\@specialization{#1}}
+\def\@specialization{\@latex@warning@no@line{No \noexpand\specialization given}}
+\def\department#1{\gdef\@department{#1}}
+\def\@department{\@latex@warning@no@line{No \noexpand\department given}}
 \def\sem#1{\gdef\@sem{#1}}
 \def\@sem{\@latex@warning@no@line{No \noexpand\sem given}}
 \def\email#1{\gdef\@email{#1}}
@@ -17,7 +21,7 @@
 \newcommand\nithtitlepage{%
 \thispagestyle{empty}
 
-{\scshape\LARGE National Institute of Technology Hamirpur \par}
+{\scshape\LARGE \@institute \par}
 \vspace{1.5cm}
 \includegraphics[width=0.4\textwidth]{imgs/logo-nit} \par
 \vspace{1cm}
@@ -28,10 +32,10 @@
 {\scshape\Large \@topic \par}
 \vspace{1.5cm}
 {\LARGE \scshape{\@title} \par}
-{\LARGE \scshape{\@code} \par}
+{\LARGE \scshape{\@subject-code} \par}
 \vspace{1.5cm}
-{\scshape\small{Communication Systems and Networks} \par}
-{\scshape\small{Electronics \& Communication Engineering Department (E\&CED)} \par}
+{\scshape\small{\@specialization} \par}
+{\scshape\small{\@department} \par}
 \vfill
 \begin{tabular}[t]{p{0.5\textwidth}@{}l} 
 	{\scshape{Submitted By:}} \\
@@ -40,7 +44,7 @@
 	{\@email}
 \end{tabular}
 \hfill  % move it to the right
-\begin{tabular}[t]{p{0.2\textwidth}l@{}}
+\begin{tabular}[t]{p{0.2\textwidth}l@{}}  % Change here if teachers name is misaligned
 	{\scshape{Submitted To:}} \\
 	{\scshape{\@teacher}} \\
 	{\@date}
