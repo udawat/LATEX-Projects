@@ -1,0 +1,50 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{nith-title-page}
+
+\def\institute#1{\gdef\@institute{#1}}
+\def\@institute{\@latex@warning@no@line{No \noexpand\institute given}}
+\def\topic#1{\gdef\@topic{#1}}
+\def\@topic{\@latex@warning@no@line{No \noexpand\topic given}}
+\def\code#1{\gdef\@code{#1}}
+\def\@code{\@latex@warning@no@line{No \noexpand\code given}}
+\def\sem#1{\gdef\@sem{#1}}
+\def\@sem{\@latex@warning@no@line{No \noexpand\sem given}}
+\def\email#1{\gdef\@email{#1}}
+\def\@email{\@latex@warning@no@line{No \noexpand\email given}}
+\def\teacher#1{\gdef\@teacher{#1}}
+\def\@teacher{\@latex@warning@no@line{No \noexpand\teacher given}}
+
+\newcommand\nithtitlepage{%
+\thispagestyle{empty}
+
+{\scshape\LARGE National Institute of Technology Hamirpur \par}
+\vspace{1.5cm}
+\includegraphics[width=0.4\textwidth]{imgs/logo-nit} \par
+\vspace{1cm}
+{\scshape\Large 2019 - 2020 \par}
+\vspace{1cm}
+{\scshape\Large Term Project Report \par}
+{\scshape\Large on \par}
+{\scshape\Large \@topic \par}
+\vspace{1.5cm}
+{\LARGE \scshape{\@title} \par}
+{\LARGE \scshape{\@code} \par}
+\vspace{1.5cm}
+{\scshape\small{Communication Systems and Networks} \par}
+{\scshape\small{Electronics \& Communication Engineering Department (E\&CED)} \par}
+\vfill
+\begin{tabular}[t]{p{0.5\textwidth}@{}l} 
+	{\scshape{Submitted By:}} \\
+	{\scshape{\@author}} \\
+	{\scshape{ \@sem}} \\
+	{\@email}
+\end{tabular}
+\hfill  % move it to the right
+\begin{tabular}[t]{p{0.2\textwidth}l@{}}
+	{\scshape{Submitted To:}} \\
+	{\scshape{\@teacher}} \\
+	{\@date}
+\end{tabular}
+}
+
+\endinput
